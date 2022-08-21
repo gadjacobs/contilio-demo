@@ -17,12 +17,10 @@ export default class App extends React.Component<IAppProps, IAppState> {
   }
 
   public render() {
-    const handleLogin = (username: string, password: string) => {
-      if (username === '' && password === '') {
+    const handleLogin = () => {
         this.setState({
           isLoggedIn: true,
         });
-      }
     };
 
     return (
