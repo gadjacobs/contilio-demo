@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Login from './components/Login/Login';
+import Dashboard from './Dashboard/Dashboard';
 
 export interface IAppProps {}
 
@@ -18,17 +19,15 @@ export default class App extends React.Component<IAppProps, IAppState> {
 
   public render() {
     const handleLogin = () => {
-        this.setState({
-          isLoggedIn: true,
-        });
+      this.setState({
+        isLoggedIn: true,
+      });
     };
 
     return (
       <>
         {this.state.isLoggedIn ? (
-          <div>
-            <h1>Welcome to Contilio</h1>
-          </div>
+          <Dashboard />
         ) : (
           <Login handleLogin={handleLogin} />
         )}
